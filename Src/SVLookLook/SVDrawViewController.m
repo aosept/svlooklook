@@ -144,8 +144,10 @@
         return;
     }
     __weak __typeof__(self) weakSelf = self;
-    __strong __typeof(weakSelf)strongSelf = weakSelf;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
         NSMutableDictionary* resultDic = [NSMutableDictionary new];
         CGFloat a0,a1;
         CGFloat ex,ey,totalx,totaly;
